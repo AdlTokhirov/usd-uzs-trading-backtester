@@ -116,6 +116,10 @@ The pipeline tries three sources in order, falling back automatically:
 
 ## Visualizations & Dashboard Components
 
+![Trading Signals](signals_chart.png)
+![Equity Curve](equity_curve.png)
+![Drawdown](drawdown_chart.png)
+
 1. Price chart with both moving averages and buy/sell signal markers.
 2. Equity curve: strategy vs. buy-and-hold portfolio value over time.
 3. Drawdown chart: peak-to-trough decline over time for both approaches.
