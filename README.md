@@ -29,22 +29,22 @@ This project demonstrates the exact workflow a junior quant analyst or treasury 
 ## System Architecture
 
 ```
-┌─────────────────────┐     ┌──────────────────────┐     ┌────────────────────┐
-│   DATA COLLECTION    │ --> │   DATA PROCESSING     │ --> │   STRATEGY ENGINE   │
-│  CBU.uz API (primary)│     │  Clean, forward-fill, │     │  MA crossover signal│
+┌───────────────────────┐     ┌───────────────────────┐     ┌─────────────────────┐
+│   DATA COLLECTION     │ --> │   DATA PROCESSING     │ --> │   STRATEGY ENGINE   │
+│  CBU.uz API (primary) │     │  Clean, forward-fill, │     │  MA crossover signal│
 │  exchangerate.host    │     │  feature engineering  │     │  generation         │
 │  (fallback)           │     │  (returns, SMAs, vol) │     │                     │
 │  Synthetic (last      │     │                       │     │                     │
 │  resort, for demo)    │     │                       │     │                     │
-└─────────────────────┘     └──────────────────────┘     └─────────┬──────────┘
+└───────────────────────┘     └───────────────────────┘     └─────────┬───────────┘
                                                                       │
                                                                       v
-┌─────────────────────┐     ┌──────────────────────┐     ┌────────────────────┐
-│     VISUALIZATION    │ <-- │  PERFORMANCE METRICS  │ <-- │  BACKTEST ENGINE     │
+┌───────────────────────┐     ┌───────────────────────┐     ┌──────────────────────┐
+│     VISUALIZATION     │ <-- │  PERFORMANCE METRICS  │ <-- │  BACKTEST ENGINE     │
 │  Matplotlib (static)  │     │  Sharpe, drawdown,    │     │  No look-ahead bias, │
 │  Plotly (interactive) │     │  win rate, returns    │     │  signal lag, txn     │
-│  dashboard             │     │                       │     │  costs, equity curve │
-└─────────────────────┘     └──────────────────────┘     └────────────────────┘
+│  dashboard            │     │                       │     │  costs, equity curve │
+└───────────────────────┘     └───────────────────────┘     └──────────────────────┘
 ```
 
 ## Required APIs and Data Sources
